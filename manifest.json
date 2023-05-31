@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "gpt2pdf",
+    "description": "Convert your chats into a pdf.",
+    "version": "1.0",
+    "icons": {
+        "16": "images/DALL·E 2023-04-25 14.16.55.png",
+        "32": "images/DALL·E 2023-04-25 14.16.55.png",
+        "48": "images/DALL·E 2023-04-25 14.16.55.png",
+        "128": "images/DALL·E 2023-04-25 14.16.55.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "images/DALL·E 2023-04-25 14.16.55.png",
+            "32": "images/DALL·E 2023-04-25 14.16.55.png",
+            "48": "images/DALL·E 2023-04-25 14.16.55.png",
+            "128": "images/DALL·E 2023-04-25 14.16.55.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "commands": {
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Ctrl+Q",
+                "mac": "Command+Q"
+            }
+        }
+    }
+}
