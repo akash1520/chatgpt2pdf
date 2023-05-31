@@ -1,18 +1,9 @@
-// chrome.runtime.onInstalled.addListener(() => {
-//     chrome.action.setBadgeText({
-//         text: "OFF",
-//     });
-// });
-
-// bd=chrome.dom.getElementsByTagName("body")[0]
-
-
 chrome.action.onClicked.addListener(async (tab) => {
 
   // Retrieve the action badge to check if the extension is 'ON' or 'OFF'
-  const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
+  let prevState = await chrome.action.getBadgeText({ tabId: tab.id });
   // Next state will always be the opposite
-  const nextState = prevState === 'ON' ? 'OFF' : 'ON'
+  let nextState = prevState === 'WORKING' ? '' : 'WORKING'
 
   // Set the action badge to the next state
   await chrome.action.setBadgeText({
@@ -24,9 +15,7 @@ chrome.action.onClicked.addListener(async (tab) => {
 
   // console.log(cssFile);
 
-  if (nextState === "ON") {
-    // bd.style.backgroundColor="black";
-    // Insert the CSS file when the user turns the extension on
+  if (nextState === "WORKING") {
 
       await chrome.scripting
       .executeScript({
@@ -34,12 +23,20 @@ chrome.action.onClicked.addListener(async (tab) => {
         target: { tabId: tab.id },
       })
 
-  } else if (nextState === "OFF") {
-    // Remove the CSS file when the user turns the extension off
-    await chrome.scripting.removeCSS({
-      files: ['styles.css'],
-      target: { tabId: tab.id },
-    });
+      setInterval(async()=>{
+        nextState=''
+
+      await chrome.action.setBadgeText({
+        tabId: tab.id,
+        text: nextState,
+      });
+      },2000)
+
+      
+      
+
+  } else if (nextState === "") {
+   console.log("Not working right now")
   }
 
 

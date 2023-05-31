@@ -2,7 +2,6 @@ async function mergeAndDownload() {
   var a = document.getElementsByClassName("flex p-4 gap-4 text-base md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl md:py-6 lg:px-0 m-auto");
 
   const styles = Array.from((document.styleSheets));
-  console.log(styles[0]);
 
   function mergeArrayElements(arr) {
     const mergedArray = [];
@@ -86,3 +85,4 @@ async function mergeAndDownload() {
 
 // Call the function whenever needed
 mergeAndDownload();
+console.log("Document generated!");

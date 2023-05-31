@@ -4,17 +4,17 @@
     "description": "Convert your chats into a pdf.",
     "version": "1.0",
     "icons": {
-        "16": "images/DALL·E 2023-04-25 14.16.55.png",
-        "32": "images/DALL·E 2023-04-25 14.16.55.png",
-        "48": "images/DALL·E 2023-04-25 14.16.55.png",
-        "128": "images/DALL·E 2023-04-25 14.16.55.png"
+        "16": "images/16by16.png",
+        "32": "images/32by32.png",
+        "48": "images/48by48.png",
+        "128": "images/128by128.png"
     },
     "action": {
         "default_icon": {
-            "16": "images/DALL·E 2023-04-25 14.16.55.png",
-            "32": "images/DALL·E 2023-04-25 14.16.55.png",
-            "48": "images/DALL·E 2023-04-25 14.16.55.png",
-            "128": "images/DALL·E 2023-04-25 14.16.55.png"
+            "16": "images/16by16.png",
+            "32": "images/32by32.png",
+            "48": "images/48by48.png",
+            "128": "images/128by128.png"
         }
     },
     "background": {
