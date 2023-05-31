@@ -30,7 +30,7 @@ chrome.action.onClicked.addListener(async (tab) => {
 
       await chrome.scripting
       .executeScript({
-        files: ["script.js"],
+        files: ["scriptNew.js"],
         target: { tabId: tab.id },
       })
 
