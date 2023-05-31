@@ -43,21 +43,27 @@ async function mergeAndDownload() {
       fetch(cssFilePath)
         .then(response => response.text())
         .then(cssContent => {
-          let htmlContent = '<div style="margin:2rem;">';
-  
-          // Inject stylesheet content
-          htmlContent += `<style>${cssContent}</style>`;
+          let htmlContent = '<html>';
+          htmlContent += '<head>';
+          htmlContent += '<style>';
+          htmlContent += '@media print {';
+          htmlContent += '  body { width: fit-content; zoom:4;}'; // Adjust body for printing
+          htmlContent += '}';
+          htmlContent += cssContent; // Inject stylesheet content
+          htmlContent += '</style>';
+          htmlContent += '</head>';
+          htmlContent += '<body style="margin:2rem">';
   
           data.forEach(item => {
-            htmlContent += '<div>';
+            htmlContent += '<div style="max-width: 100%; overflow-wrap: break-word;">';
             htmlContent += '<h3>Query:</h3>';
             htmlContent += '<p>' + item.query + '</p>';
             htmlContent += '<h3>Response:</h3>';
             htmlContent += '<p>' + (item.response ? item.response : 'N/A') + '</p>';
             htmlContent += '</div>';
           });
-  
-          htmlContent += '</div>';
+          htmlContent += '</body>';
+          htmlContent += '</html>';
   
           resolve(htmlContent);
         })
