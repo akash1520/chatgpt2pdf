@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "gpt2pdf",
     "description": "Convert your chats into a pdf.",
-    "version": "2.0",
+    "version": "3.0",
     "icons": {
         "16": "images/16by16.png",
         "32": "images/32by32.png",
