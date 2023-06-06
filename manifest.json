@@ -18,7 +18,7 @@
         }
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": ["background.js"]
     },
     "permissions": [
         "activeTab",
@@ -31,5 +31,8 @@
                 "mac": "Command+Shift+Q"
             }
         }
-    }
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
+      }
 }
