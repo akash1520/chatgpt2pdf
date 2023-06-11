@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "gpt2pdf",
     "description": "Convert your chats into a pdf.",
-    "version": "4.0",
+    "version": "3.0",
     "icons": {
         "16": "images/16by16.png",
         "32": "images/32by32.png",
@@ -19,11 +19,10 @@
     },
     "background": {
         "service_worker": "background.js"
-    },
+    },   
     "permissions": [
         "activeTab",
-        "scripting"
-    ],
+        "scripting"],
     "commands": {
         "_execute_action": {
             "suggested_key": {

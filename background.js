@@ -11,15 +11,11 @@ chrome.action.onClicked.addListener(async (tab) => {
     text: nextState,
   });
 
-  
-
-  // console.log(cssFile);
-
   if (nextState === "WORKING") {
 
       await chrome.scripting
       .executeScript({
-        files: ["scriptNew.js"],
+        files: ["content.js"],
         target: { tabId: tab.id },
       })
 
@@ -31,15 +27,11 @@ chrome.action.onClicked.addListener(async (tab) => {
         text: nextState,
       });
       },2000)
-
-      
-      
-
   } else if (nextState === "") {
-   console.log("Not working right now")
+    console.log("not working rn");
   }
 
-
-
 })
+
+
 
